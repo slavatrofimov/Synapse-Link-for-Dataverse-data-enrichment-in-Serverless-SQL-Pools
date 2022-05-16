@@ -20,7 +20,7 @@ This repository includes a utility for enriching the raw integer values found in
 For example, you may execute the folloing T-SQL statement to create the database: 
 >`CREATE DATABASE DataverseEnriched`
 
-2. Open the [Enrich Synapse Link for Dataverse Entities with Human-Readable Labels.sql](SQL/Enrich Synapse Link for Dataverse Entities with Human-Readable Labels.sql) file found in the SQL folder of this repository in your Synapse Analytics Workspace (or in your favorite SQL authroing tool connected to your Serverless SQL Pool). 
+2. Open the [Enrich Synapse Link for Dataverse Entities with Human-Readable Labels.sql](https://github.com/slavatrofimov/Synapse-Link-for-Dataverse-data-enrichment-in-Serverless-SQL-Pools/blob/main/SQL/Enrich%20Synapse%20Link%20for%20Dataverse%20Entities%20with%20Human-Readable%20Labels.sql) file found in the SQL folder of this repository in your Synapse Analytics Workspace (or in your favorite SQL authroing tool connected to your Serverless SQL Pool). 
 
 3. Specify the name of the database in the context of which the script neeeds to run (this should be the lake database created by Synapse Link for Dataverse).
 
