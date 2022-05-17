@@ -170,7 +170,7 @@ WHERE CM.DataType LIKE '%int' --Only capture columns with Integer Data Types
 
 UNION ALL 
 --Construct LEFT JOIN statements for each relevant GlobalOptionSetMetadata field
-SELECT DISTINCT CM.TableName AS TableName,
+SELECT DISTINCT CM.EntityName AS EntityName,
 '	LEFT JOIN ' + QUOTENAME(DB_NAME()) + '.[dbo].[GlobalOptionSetMetadata] AS ' + Alias + ' 
 		ON ' + Alias + '.OptionSetName = ''' +  OptionSetName + '''
 		AND [Base].' + QUOTENAME(OptionSetName) + ' = ' + Alias + '.[Option]
