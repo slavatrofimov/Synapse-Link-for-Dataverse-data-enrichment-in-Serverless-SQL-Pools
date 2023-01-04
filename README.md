@@ -6,7 +6,7 @@
 
 Data exported from Microsoft Dataverse into Synapse Analytics Workspaces using Synapse Link for Dataverse includes choice, status and state columns represented as integers. These integer values must be translated into descriptive, localized labels to make the data human-readable. 
 
-When accessing the Synapes Link for Dataverse data through a Synapse Analytics Serverless SQL Pool, this can be accomplished by joining the raw data with the system-generated tables containing the mapping of code values to their descriptions, as documented in the followign article: https://docs.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-link-choice-labels. Yet, the potentially large number of joins that must be performed to translate each code into a corresponding label make this process tedious and labor-intensive.
+When accessing the Synapse Link for Dataverse data through a Synapse Analytics Serverless SQL Pool, this can be accomplished by joining the raw data with the system-generated tables containing the mapping of code values to their descriptions, as documented in the following article: https://docs.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-link-choice-labels. Yet, the potentially large number of joins that must be performed to translate each code into a corresponding label make this process tedious and labor-intensive.
 
 ## Solution
 This repository includes a utility for enriching the raw integer values found in these columns into human-readable descriptions. This utility facilitates the creation of database views in a database within your Synapse Analytics Serverless SQL Pool that will translate numeric codes for Option Set Metadata, Global Option Set Metadata, Status Metadata and State Metadata into human-readable descriptions for tables exported using Synapse Link for Dataverse.
@@ -17,7 +17,7 @@ This repository includes a utility for enriching the raw integer values found in
 
 ### Implementation
 1. The Lake Database created by Synapse Link for Dataverse is fully managed by the Synapse Link and is only accessible in read-only mode. Hence, we will need to create another database for the views with enriched entities. 
-For example, you may execute the folloing T-SQL statement to create the database: 
+For example, from the Synapse Analytics workspace you may choose **Data->Add new resource->SQL Database**, or execute the folloing T-SQL statement to create the database: 
 >`CREATE DATABASE DataverseEnriched`
 
 2. Open the [Enrich Synapse Link for Dataverse Entities with Human-Readable Labels.sql](https://github.com/slavatrofimov/Synapse-Link-for-Dataverse-data-enrichment-in-Serverless-SQL-Pools/blob/main/SQL/Enrich%20Synapse%20Link%20for%20Dataverse%20Entities%20with%20Human-Readable%20Labels.sql) file found in the SQL folder of this repository in your Synapse Analytics Workspace (or in your favorite SQL authroing tool connected to your Serverless SQL Pool). 
